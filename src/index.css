@@ -6,56 +6,56 @@
 
 @layer base {
   :root {
-    /* Luxury dark theme with deep navy and subtle warmth */
-    --background: 222 47% 6%;
+    /* Spring-inspired dark theme with charcoal and vibrant green */
+    --background: 210 20% 11%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 8%;
+    --card: 210 20% 13%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 8%;
+    --popover: 210 20% 13%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 100% 60%;
-    --primary-foreground: 222 47% 6%;
+    --primary: 100 70% 50%;
+    --primary-foreground: 210 20% 11%;
 
-    --secondary: 250 60% 55%;
+    --secondary: 100 60% 45%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 222 30% 12%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 210 15% 16%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 280 70% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 100 65% 55%;
+    --accent-foreground: 210 20% 11%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 222 30% 18%;
-    --input: 222 30% 15%;
-    --ring: 210 100% 60%;
+    --border: 210 15% 20%;
+    --input: 210 15% 18%;
+    --ring: 100 70% 50%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
     /* Custom tokens */
-    --glow-primary: 210 100% 60%;
-    --glow-secondary: 250 60% 55%;
-    --glow-accent: 280 70% 60%;
+    --glow-primary: 100 70% 50%;
+    --glow-secondary: 100 60% 45%;
+    --glow-accent: 100 65% 55%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 60%), hsl(250 60% 55%));
-    --gradient-hero: linear-gradient(180deg, hsl(222 47% 6%) 0%, hsl(222 47% 10%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(222 47% 10% / 0.8), hsl(222 47% 8% / 0.6));
+    --gradient-primary: linear-gradient(135deg, hsl(100 70% 50%), hsl(100 60% 45%));
+    --gradient-hero: linear-gradient(180deg, hsl(210 20% 11%) 0%, hsl(210 20% 14%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(210 20% 14% / 0.8), hsl(210 20% 12% / 0.6));
     
-    --glass-bg: hsl(222 47% 12% / 0.4);
-    --glass-border: hsl(210 40% 98% / 0.08);
-    --glass-blur: 20px;
+    --glass-bg: hsl(210 20% 15% / 0.6);
+    --glass-border: hsl(210 40% 98% / 0.06);
+    --glass-blur: 16px;
 
-    --text-opacity: 0.7;
-    --text-opacity-muted: 0.5;
+    --text-opacity: 0.75;
+    --text-opacity-muted: 0.55;
   }
 
   .dark {
-    --background: 222 47% 6%;
+    --background: 210 20% 11%;
     --foreground: 210 40% 98%;
   }
 }
@@ -87,7 +87,7 @@
 @layer components {
   /* Glassmorphic card */
   .glass-card {
-    @apply relative overflow-hidden rounded-2xl;
+    @apply relative overflow-hidden rounded-lg;
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
@@ -96,67 +96,67 @@
 
   .glass-card::before {
     content: '';
-    @apply absolute inset-0 rounded-2xl pointer-events-none;
-    background: linear-gradient(135deg, hsl(210 40% 98% / 0.05) 0%, transparent 50%);
+    @apply absolute inset-0 rounded-lg pointer-events-none;
+    background: linear-gradient(135deg, hsl(210 40% 98% / 0.03) 0%, transparent 50%);
   }
 
   /* Neumorphic button */
   .btn-neumorphic {
-    @apply relative px-8 py-4 rounded-xl font-medium text-sm tracking-wide transition-all duration-300;
-    background: linear-gradient(145deg, hsl(210 100% 55%), hsl(210 100% 50%));
+    @apply relative px-8 py-4 rounded-lg font-medium text-sm tracking-wide transition-all duration-300;
+    background: linear-gradient(145deg, hsl(100 70% 55%), hsl(100 70% 45%));
     box-shadow: 
-      0 4px 20px hsl(210 100% 50% / 0.3),
-      0 2px 8px hsl(222 47% 6% / 0.5),
-      inset 0 1px 0 hsl(210 40% 98% / 0.2);
+      0 4px 20px hsl(100 70% 50% / 0.3),
+      0 2px 8px hsl(210 20% 8% / 0.5),
+      inset 0 1px 0 hsl(100 80% 70% / 0.3);
   }
 
   .btn-neumorphic:hover {
     transform: translateY(-2px);
     box-shadow: 
-      0 8px 30px hsl(210 100% 50% / 0.4),
-      0 4px 12px hsl(222 47% 6% / 0.5),
-      inset 0 1px 0 hsl(210 40% 98% / 0.3);
+      0 8px 30px hsl(100 70% 50% / 0.4),
+      0 4px 12px hsl(210 20% 8% / 0.5),
+      inset 0 1px 0 hsl(100 80% 70% / 0.4);
   }
 
   .btn-neumorphic:active {
     transform: translateY(0);
     box-shadow: 
-      0 2px 10px hsl(210 100% 50% / 0.3),
-      0 1px 4px hsl(222 47% 6% / 0.5),
-      inset 0 1px 0 hsl(210 40% 98% / 0.1);
+      0 2px 10px hsl(100 70% 50% / 0.3),
+      0 1px 4px hsl(210 20% 8% / 0.5),
+      inset 0 1px 0 hsl(100 80% 70% / 0.2);
   }
 
   /* Secondary neumorphic button */
   .btn-neumorphic-secondary {
-    @apply relative px-8 py-4 rounded-xl font-medium text-sm tracking-wide transition-all duration-300;
-    background: linear-gradient(145deg, hsl(222 47% 14%), hsl(222 47% 10%));
-    border: 1px solid hsl(210 40% 98% / 0.1);
+    @apply relative px-8 py-4 rounded-lg font-medium text-sm tracking-wide transition-all duration-300;
+    background: linear-gradient(145deg, hsl(210 20% 16%), hsl(210 20% 12%));
+    border: 1px solid hsl(210 40% 98% / 0.08);
     box-shadow: 
-      0 4px 20px hsl(222 47% 6% / 0.5),
-      inset 0 1px 0 hsl(210 40% 98% / 0.05);
+      0 4px 20px hsl(210 20% 8% / 0.5),
+      inset 0 1px 0 hsl(210 40% 98% / 0.04);
   }
 
   .btn-neumorphic-secondary:hover {
     transform: translateY(-2px);
-    border-color: hsl(210 40% 98% / 0.2);
+    border-color: hsl(100 70% 50% / 0.3);
     box-shadow: 
-      0 8px 30px hsl(222 47% 6% / 0.6),
-      inset 0 1px 0 hsl(210 40% 98% / 0.1);
+      0 8px 30px hsl(210 20% 8% / 0.6),
+      inset 0 1px 0 hsl(210 40% 98% / 0.08);
   }
 
   /* Gradient text */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(210 100% 70%), hsl(250 70% 70%), hsl(280 70% 70%));
+    background-image: linear-gradient(135deg, hsl(100 70% 60%), hsl(100 80% 70%));
   }
 
   /* Glow effect */
   .glow-primary {
-    box-shadow: 0 0 60px hsl(210 100% 50% / 0.15);
+    box-shadow: 0 0 60px hsl(100 70% 50% / 0.12);
   }
 
   .glow-accent {
-    box-shadow: 0 0 60px hsl(280 70% 50% / 0.15);
+    box-shadow: 0 0 60px hsl(100 65% 50% / 0.12);
   }
 
   /* Scroll animation base states */
@@ -204,9 +204,9 @@
 
   /* Icon container */
   .icon-container {
-    @apply w-12 h-12 rounded-xl flex items-center justify-center;
-    background: linear-gradient(135deg, hsl(210 100% 50% / 0.15), hsl(250 60% 50% / 0.1));
-    border: 1px solid hsl(210 100% 50% / 0.2);
+    @apply w-12 h-12 rounded-lg flex items-center justify-center;
+    background: linear-gradient(135deg, hsl(100 70% 50% / 0.15), hsl(100 60% 45% / 0.1));
+    border: 1px solid hsl(100 70% 50% / 0.2);
   }
 
   /* Divider */

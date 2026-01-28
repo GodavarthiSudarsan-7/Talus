@@ -43,26 +43,26 @@ export const FAQ = () => {
           ref={ref}
           className={`animate-on-scroll ${isVisible ? 'visible' : ''}`}
         >
-          <div className="text-center mb-16">
-            <span className="text-sm text-primary uppercase tracking-wider font-medium">
-              FAQ
-            </span>
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mt-4 mb-6 opacity-100">
+          <div className="mb-16">
+            {/* Green accent bar */}
+            <div className="w-8 h-1 bg-primary mb-8" />
+            
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 opacity-100">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/60 max-w-2xl">
               Everything you need to know about intellectual property, reputation, 
               and blockchain verification.
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl">
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="glass-card px-6 border-none"
+                  className="border-b border-border/30 px-0"
                 >
                   <AccordionTrigger className="text-left text-lg font-medium hover:no-underline py-6 opacity-100">
                     {faq.question}

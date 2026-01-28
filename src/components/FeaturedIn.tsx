@@ -13,7 +13,7 @@ export const FeaturedIn = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 border-t border-border/30">
+    <section className="py-16 border-t border-border/20">
       <div className="container mx-auto px-6">
         <div
           ref={ref}
@@ -26,7 +26,7 @@ export const FeaturedIn = () => {
             {logos.map((logo) => (
               <div
                 key={logo.name}
-                className="flex items-center justify-center h-8 opacity-40 hover:opacity-70 transition-opacity duration-300"
+                className="flex items-center justify-center h-8 opacity-30 hover:opacity-60 transition-opacity duration-300"
                 style={{ width: logo.width }}
               >
                 <span className="text-xl font-medium tracking-tight text-foreground">

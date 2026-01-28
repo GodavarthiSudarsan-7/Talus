@@ -40,7 +40,7 @@ export const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'nav-blur bg-background/80 border-b border-border/50'
+            ? 'nav-blur bg-background/90 border-b border-border/30'
             : 'bg-transparent'
         }`}
       >
@@ -48,7 +48,7 @@ export const Navbar = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 opacity-100">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-lg font-semibold text-primary-foreground">N</span>
               </div>
               <span className="text-xl font-medium tracking-tight">Nexus</span>
@@ -60,7 +60,7 @@ export const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
+                  className="text-sm text-foreground/60 hover:text-foreground transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -71,7 +71,7 @@ export const Navbar = () => {
             <div className="hidden md:flex items-center gap-4">
               <a
                 href="#contact"
-                className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-200"
+                className="text-sm text-foreground/60 hover:text-foreground transition-colors duration-200"
               >
                 Contact
               </a>
@@ -83,7 +83,7 @@ export const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-muted/50 text-foreground opacity-100"
+              className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-muted/50 text-foreground opacity-100"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -112,14 +112,14 @@ export const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-80 bg-card border-l border-border md:hidden"
+              className="fixed top-0 right-0 bottom-0 z-50 w-80 bg-card border-l border-border/30 md:hidden"
             >
               <div className="flex flex-col h-full p-6">
                 <div className="flex items-center justify-between mb-10">
                   <span className="text-xl font-medium tracking-tight opacity-100">Menu</span>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-10 h-10 flex items-center justify-center rounded-xl bg-muted/50 text-foreground opacity-100"
+                    className="w-10 h-10 flex items-center justify-center rounded-lg bg-muted/50 text-foreground opacity-100"
                     aria-label="Close menu"
                   >
                     <X size={24} weight="light" />
@@ -132,7 +132,7 @@ export const Navbar = () => {
                       key={link.label}
                       href={link.href}
                       onClick={handleLinkClick}
-                      className="py-4 px-4 text-lg text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-xl transition-all duration-200"
+                      className="py-4 px-4 text-lg text-foreground/60 hover:text-foreground hover:bg-muted/50 rounded-lg transition-all duration-200"
                     >
                       {link.label}
                     </a>
@@ -140,7 +140,7 @@ export const Navbar = () => {
                   <a
                     href="#contact"
                     onClick={handleLinkClick}
-                    className="py-4 px-4 text-lg text-foreground/70 hover:text-foreground hover:bg-muted/50 rounded-xl transition-all duration-200"
+                    className="py-4 px-4 text-lg text-foreground/60 hover:text-foreground hover:bg-muted/50 rounded-lg transition-all duration-200"
                   >
                     Contact
                   </a>
