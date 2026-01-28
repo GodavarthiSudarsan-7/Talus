@@ -6,8 +6,8 @@ export const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen pt-32 pb-20 overflow-hidden">
       {/* Background gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-secondary/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/8 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-primary/6 blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -72,11 +72,11 @@ export const Hero = () => {
           className="mt-20 relative"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 pointer-events-none" />
-          <div className="glass-card p-2 rounded-3xl glow-primary overflow-hidden">
+          <div className="rounded-lg border border-border/50 p-1 overflow-hidden">
             <img
               src={mockupImage}
               alt="Nexus Platform Dashboard"
-              className="w-full rounded-2xl"
+              className="w-full rounded-md"
             />
           </div>
         </motion.div>

@@ -1,27 +1,21 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Buildings, Lightbulb, ShieldCheck, ArrowRight } from '@phosphor-icons/react';
+import { Buildings, Lightbulb, ShieldCheck } from '@phosphor-icons/react';
 
 const steps = [
   {
-    number: '01',
     icon: Buildings,
     title: 'Companies Post Challenges',
     description: 'Enterprises define real-world problems with clear success criteria. Challenges are structured to attract cross-industry expertise while protecting sensitive information.',
-    gradient: 'from-primary/20 to-transparent',
   },
   {
-    number: '02',
     icon: Lightbulb,
     title: 'Innovators Submit Solutions',
     description: 'Global innovators submit and refine solution prototypes. Every contribution is timestamped and cryptographically verified on the blockchain.',
-    gradient: 'from-secondary/20 to-transparent',
   },
   {
-    number: '03',
     icon: ShieldCheck,
     title: 'Community Validates & Verifies',
     description: 'Expert mentors and the community evaluate solutions. Top prototypes are surfaced through transparent scoring, with reputation permanently recorded.',
-    gradient: 'from-accent/20 to-transparent',
   },
 ];
 
@@ -30,21 +24,13 @@ export const HowItWorks = () => {
 
   return (
     <section id="how-it-works" className="py-24 relative">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      </div>
-
       <div className="container mx-auto px-6 relative z-10">
         <div
           ref={ref}
           className={`animate-on-scroll ${isVisible ? 'visible' : ''}`}
         >
           <div className="text-center mb-16">
-            <span className="text-sm text-primary uppercase tracking-wider font-medium">
-              How It Works
-            </span>
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mt-4 mb-6 opacity-100">
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 opacity-100">
               From Problem to Verified Prototype
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
@@ -54,35 +40,24 @@ export const HowItWorks = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-12">
           {steps.map((step, index) => (
-            <div key={index} className="relative group">
-              {/* Connecting arrow (hidden on mobile and last item) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-24 -right-4 z-20 text-border/50">
-                  <ArrowRight size={24} weight="light" />
-                </div>
-              )}
+            <div key={index} className="group">
+              {/* Green accent bar */}
+              <div className="w-8 h-1 bg-primary mb-6" />
 
-              <div className="glass-card p-8 h-full transition-all duration-500 group-hover:border-primary/30">
-                {/* Step number */}
-                <div className="text-6xl font-light text-foreground/10 mb-4">
-                  {step.number}
-                </div>
-
-                {/* Icon */}
-                <div className={`icon-container mb-6 bg-gradient-to-br ${step.gradient}`}>
-                  <step.icon size={24} weight="light" className="text-foreground" />
-                </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-medium tracking-tight mb-4 opacity-100">
-                  {step.title}
-                </h3>
-                <p className="text-foreground/60 leading-relaxed">
-                  {step.description}
-                </p>
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                <step.icon size={28} weight="light" className="text-primary" />
               </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-medium tracking-tight mb-4 opacity-100">
+                {step.title}
+              </h3>
+              <p className="text-foreground/60 leading-relaxed">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
