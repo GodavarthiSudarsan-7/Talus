@@ -39,21 +39,21 @@ export const Features = () => {
           ref={ref}
           className={`animate-on-scroll ${isVisible ? 'visible' : ''}`}
         >
-          <div className="grid md:grid-cols-2 gap-x-24 gap-y-16">
+          <div className="grid md:grid-cols-2 gap-x-24 gap-y-20">
             {features.map((feature, index) => (
               <div key={index} className="group">
-                {/* Green accent bar */}
-                <div className="w-8 h-1 bg-primary mb-6" />
+                {/* Green accent bar like Spring.io */}
+                <div className="w-10 h-1 bg-primary mb-8" />
                 
-                <h3 className="text-2xl md:text-3xl font-medium tracking-tight mb-4 opacity-100">
+                <h3 className="text-2xl md:text-3xl font-medium tracking-tight mb-8 opacity-100">
                   {feature.title}
                 </h3>
 
-                <div className="flex items-start gap-6">
-                  {/* Icon */}
-                  <div className="flex-shrink-0 mt-1">
-                    <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <feature.icon size={28} weight="light" className="text-primary" />
+                <div className="flex items-start gap-8">
+                  {/* Icon with colored background */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-lg bg-primary/15 flex items-center justify-center">
+                      <feature.icon size={32} weight="light" className="text-primary" />
                     </div>
                   </div>
 

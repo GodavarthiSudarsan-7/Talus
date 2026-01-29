@@ -35,29 +35,33 @@ export const Testimonials = () => {
                 key={index}
                 className="relative"
               >
-                {/* Main green card with geometric cutout */}
-                <div className="relative bg-primary rounded-lg overflow-hidden">
-                  {/* Geometric shape overlay on the right */}
-                  <div 
-                    className="absolute top-0 right-0 w-1/4 h-full bg-primary/80"
-                    style={{
-                      clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0% 100%)',
-                    }}
-                  />
-                  
-                  <div className="relative z-10 p-10 md:p-12 max-w-4xl">
-                    <p className="text-xl md:text-2xl font-normal leading-relaxed text-primary-foreground mb-8 opacity-100">
-                      "{testimonial.quote}"
-                    </p>
-
-                    <div>
-                      <p className="font-semibold text-primary-foreground/90 uppercase tracking-wider text-sm">
-                        {testimonial.author}, {testimonial.role}
+                {/* Main green card with diagonal cutout like Spring.io */}
+                <div className="relative overflow-hidden">
+                  {/* Green background with diagonal */}
+                  <div className="relative flex">
+                    {/* Main green section */}
+                    <div className="bg-primary py-12 px-10 md:px-14 flex-1 max-w-4xl">
+                      <p className="text-xl md:text-2xl font-normal leading-relaxed text-primary-foreground mb-8 opacity-100">
+                        "{testimonial.quote}"
                       </p>
-                      <a href="#contact" className="text-primary-foreground/70 text-sm hover:text-primary-foreground/90 transition-colors mt-2 inline-block">
-                        Learn more →
-                      </a>
+
+                      <div>
+                        <p className="font-semibold text-primary-foreground/90 uppercase tracking-wider text-sm">
+                          {testimonial.author}, {testimonial.role}
+                        </p>
+                        <a href="#contact" className="text-primary-foreground/70 text-sm hover:text-primary-foreground/90 transition-colors mt-2 inline-block opacity-100">
+                          Learn more →
+                        </a>
+                      </div>
                     </div>
+                    
+                    {/* Diagonal extension */}
+                    <div 
+                      className="hidden md:block w-48 bg-primary/70"
+                      style={{
+                        clipPath: 'polygon(40% 0, 100% 0, 100% 100%, 0% 100%)',
+                      }}
+                    />
                   </div>
                 </div>
               </div>
