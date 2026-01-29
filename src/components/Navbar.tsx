@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { List, X } from '@phosphor-icons/react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -47,12 +48,12 @@ export const Navbar = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3 opacity-100">
+            <Link to="/" className="flex items-center gap-3 opacity-100">
               <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-lg font-semibold text-primary-foreground">N</span>
               </div>
               <span className="text-xl font-medium tracking-tight">Nexus</span>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
@@ -75,9 +76,9 @@ export const Navbar = () => {
               >
                 Contact
               </a>
-              <a href="#hero" className="btn-neumorphic text-foreground opacity-100">
+              <Link to="/login" className="btn-neumorphic text-foreground opacity-100">
                 Get Started
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -147,13 +148,13 @@ export const Navbar = () => {
                 </div>
 
                 <div className="mt-auto">
-                  <a
-                    href="#hero"
+                  <Link
+                    to="/login"
                     onClick={handleLinkClick}
                     className="btn-neumorphic w-full text-center block text-foreground opacity-100"
                   >
                     Get Started
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

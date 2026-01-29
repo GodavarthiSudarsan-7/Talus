@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from '@phosphor-icons/react';
 import mockupImage from '@/assets/mockup.png';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   return (
@@ -51,10 +52,13 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a href="#how-it-works" className="btn-neumorphic flex items-center gap-2 text-foreground opacity-100">
+            <Link
+              to="/login"
+              className="btn-neumorphic flex items-center gap-2 text-foreground opacity-100"
+            >
               Get Started
               <ArrowRight size={18} weight="light" />
-            </a>
+            </Link>
             <a
               href="#features"
               className="btn-neumorphic-secondary text-foreground opacity-100"
