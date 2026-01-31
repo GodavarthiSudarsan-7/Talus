@@ -15,6 +15,8 @@ import LoginCorporate from "./pages/auth/LoginCorporate";
 import Signup from "./pages/auth/Signup";
 import SignupContributor from "./pages/auth/SignupContributor";
 import SignupCorporate from "./pages/auth/SignupCorporate";
+import ContributorDashboard from "./pages/dashboard/ContributorDashboard";
+import CorporateDashboard from "./pages/dashboard/CorporateDashboard";
 
 const queryClient = new QueryClient();
 
@@ -32,11 +34,12 @@ const App = () => (
           <Route path="/signup" element={<Signup />} />
           <Route path="/signup/contributor" element={<SignupContributor />} />
           <Route path="/signup/corporate" element={<SignupCorporate />} />
+          <Route path="/dashboard/contributor" element={<ContributorDashboard />} />
+          <Route path="/dashboard/corporate" element={<CorporateDashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/challenges" element={<Challenges />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<ContactPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
