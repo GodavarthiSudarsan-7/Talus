@@ -48,7 +48,7 @@ export default function LoginContributor() {
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-white text-black placeholder:text-gray-400"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -57,7 +57,7 @@ export default function LoginContributor() {
             <input
               type="password"
               placeholder="Password"
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-white text-black placeholder:text-gray-400"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
