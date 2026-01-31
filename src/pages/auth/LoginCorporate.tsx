@@ -40,7 +40,7 @@ export default function LoginCorporate() {
   return (
     <AuthLayout
       title="Corporate Login"
-      subtitle="Sign in to post challenges and review submissions."
+      subtitle="Sign in to post challenges and review solutions."
     >
       <div className="max-w-xl mx-auto">
         <div className="glass-card p-8 md:p-10">
@@ -48,7 +48,7 @@ export default function LoginCorporate() {
             <input
               type="email"
               placeholder="Work email"
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-white text-black placeholder:text-gray-400"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -57,7 +57,7 @@ export default function LoginCorporate() {
             <input
               type="password"
               placeholder="Password"
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-white text-black placeholder:text-gray-400"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
