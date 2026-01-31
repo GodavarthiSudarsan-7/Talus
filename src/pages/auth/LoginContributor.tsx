@@ -1,54 +1,77 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthLayout } from "@/components/auth/AuthLayout";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function LoginContributor() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error || !data.user) {
+      setError("Invalid email or password");
+      return;
+    }
+
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", data.user.id)
+      .single();
+
+    if (profile?.role !== "contributor") {
+      setError("This is not a contributor account");
+      return;
+    }
+
+    navigate("/dashboard/contributor");
+  };
+
   return (
     <AuthLayout
       title="Contributor Login"
-      subtitle="Sign in to access challenges, submit solutions, and grow your reputation score."
+      subtitle="Sign in to access challenges and submit solutions."
     >
       <div className="max-w-xl mx-auto">
         <div className="glass-card p-8 md:p-10">
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div>
-              <label className="block text-sm text-foreground/70 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                autoComplete="email"
-                className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                placeholder="you@example.com"
-              />
-            </div>
+          <form className="space-y-6" onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full px-4 py-3 rounded-xl"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
 
-            <div>
-              <label className="block text-sm text-foreground/70 mb-2">
-                Password
-              </label>
-              <input
-                type="password"
-                autoComplete="current-password"
-                className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                placeholder="••••••••"
-              />
-            </div>
+            <input
+              type="password"
+              placeholder="Password"
+              className="w-full px-4 py-3 rounded-xl"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
-            <button
-              type="submit"
-              className="btn-neumorphic w-full text-foreground opacity-100"
-            >
-              Sign In
-            </button>
+            {error && <p className="text-red-500">{error}</p>}
+
+            <button className="btn-neumorphic w-full">Sign In</button>
           </form>
         </div>
 
-        <div className="mt-8 text-center text-sm text-foreground/50">
+        <div className="mt-8 text-center text-sm">
           Don’t have an account?{" "}
-          <Link
-            to="/signup"
-            className="text-primary hover:text-primary/90 transition-colors opacity-100"
-          >
+          <Link to="/signup" className="text-primary">
             Sign up
           </Link>
         </div>
@@ -56,4 +79,3 @@ export default function LoginContributor() {
     </AuthLayout>
   );
 }
-
