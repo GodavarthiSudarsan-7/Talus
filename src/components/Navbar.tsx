@@ -52,7 +52,7 @@ export const Navbar = () => {
               <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-lg font-semibold text-primary-foreground">N</span>
               </div>
-              <span className="text-xl font-medium tracking-tight">Nexus</span>
+              <span className="text-xl font-medium tracking-tight">Talus</span>
             </Link>
 
             {/* Desktop Navigation */}
