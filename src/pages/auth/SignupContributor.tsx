@@ -49,9 +49,7 @@ export default function SignupContributor() {
         p_country: form.countryOfResidence,
       });
 
-      if (profileError) {
-        throw profileError;
-      }
+      if (profileError) throw profileError;
 
       const { error: contributorError } = await supabase
         .from("contributor_profiles")
@@ -64,9 +62,7 @@ export default function SignupContributor() {
           country_of_residence: form.countryOfResidence,
         });
 
-      if (contributorError) {
-        throw contributorError;
-      }
+      if (contributorError) throw contributorError;
 
       navigate("/login/contributor");
     } catch (err: any) {
@@ -99,7 +95,7 @@ export default function SignupContributor() {
                 value={form.firstName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl"
+                className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
               <input
                 type="text"
@@ -108,7 +104,7 @@ export default function SignupContributor() {
                 value={form.lastName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl"
+                className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
 
@@ -119,7 +115,7 @@ export default function SignupContributor() {
               value={form.displayName}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
 
             <div className="grid md:grid-cols-2 gap-4">
@@ -130,7 +126,7 @@ export default function SignupContributor() {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl"
+                className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
               <input
                 type="password"
@@ -139,7 +135,7 @@ export default function SignupContributor() {
                 value={form.password}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl"
+                className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
 
@@ -151,7 +147,7 @@ export default function SignupContributor() {
                 value={form.countryOfResidence}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl"
+                className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
               <input
                 type="date"
@@ -159,7 +155,7 @@ export default function SignupContributor() {
                 value={form.birthdate}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl"
+                className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
 
@@ -169,7 +165,7 @@ export default function SignupContributor() {
               placeholder="Short bio"
               value={form.bio}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none"
             />
 
             {error && <p className="text-red-500 text-sm">{error}</p>}
