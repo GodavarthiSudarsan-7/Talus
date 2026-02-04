@@ -44,9 +44,7 @@ export default function SignupCorporate() {
         p_country: form.countryOfOrigin,
       });
 
-      if (profileError) {
-        throw profileError;
-      }
+      if (profileError) throw profileError;
 
       const { error: corporateError } = await supabase
         .from("corporate_profiles")
@@ -57,9 +55,7 @@ export default function SignupCorporate() {
           company_badge_icon: null,
         });
 
-      if (corporateError) {
-        throw corporateError;
-      }
+      if (corporateError) throw corporateError;
 
       navigate("/login/corporate");
     } catch (err: any) {
@@ -91,7 +87,7 @@ export default function SignupCorporate() {
               value={form.companyName}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
 
             <input
@@ -101,7 +97,7 @@ export default function SignupCorporate() {
               value={form.displayName}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
 
             <input
@@ -111,7 +107,7 @@ export default function SignupCorporate() {
               value={form.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
 
             <input
@@ -121,7 +117,7 @@ export default function SignupCorporate() {
               value={form.password}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
 
             <input
@@ -131,7 +127,7 @@ export default function SignupCorporate() {
               value={form.countryOfOrigin}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl"
+              className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
             />
 
             {error && <p className="text-red-500 text-sm">{error}</p>}
