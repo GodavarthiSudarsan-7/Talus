@@ -1,46 +1,84 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/lib/supabaseClient";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+
+type Challenge = {
+  id: string;
+  title: string;
+  created_at: string;
+};
 
 export default function CorporateDashboard() {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [challenges, setChallenges] = useState<Challenge[]>([]);
+  const navigate = useNavigate();
 
-  const postChallenge = async () => {
-    const { data } = await supabase.auth.getUser();
-    if (!data.user) return;
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => {
+      if (!data.user) return;
 
-    await supabase.from("challenges").insert({
-      corporate_id: data.user.id,
-      title,
-      description,
+      supabase
+        .from("challenges")
+        .select("id,title,created_at")
+        .eq("corporate_id", data.user.id)
+        .then(({ data }) => setChallenges(data || []));
     });
+  }, []);
 
-    alert("Challenge posted!");
-    setTitle("");
-    setDescription("");
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    navigate("/login");
   };
 
   return (
-    <div className="p-10">
-      <h1 className="text-3xl mb-6">Create Challenge</h1>
+    <div className="min-h-screen bg-background">
+      <Navbar />
 
-      <input
-        className="w-full p-3 mb-4 rounded"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+      <main className="pt-32 pb-20">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between mb-10">
+            <h1 className="text-4xl font-medium">Your Challenges</h1>
 
-      <textarea
-        className="w-full p-3 mb-4 rounded"
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
+            <div className="flex gap-4">
+              <button
+                onClick={() => navigate("/challenges/new")}
+                className="btn-neumorphic"
+              >
+                Create Challenge
+              </button>
 
-      <button className="btn-neumorphic" onClick={postChallenge}>
-        Post Challenge
-      </button>
+              <button
+                onClick={handleLogout}
+                className="btn-neumorphic-secondary"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+
+          {challenges.length === 0 && (
+            <div className="glass-card p-8 text-center text-foreground/60">
+              You haven’t posted any challenges yet
+            </div>
+          )}
+
+          <div className="space-y-4">
+            {challenges.map((challenge) => (
+              <div key={challenge.id} className="glass-card p-6">
+                <h2 className="text-xl font-medium">
+                  {challenge.title}
+                </h2>
+                <p className="text-sm text-foreground/60">
+                  Created on {new Date(challenge.created_at).toDateString()}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+
+      <Footer />
     </div>
   );
 }
