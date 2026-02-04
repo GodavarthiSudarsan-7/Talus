@@ -9,7 +9,7 @@ import {
 const faqs = [
   {
     question: 'How does blockchain protect my intellectual property?',
-    answer: 'Every contribution you make is timestamped and cryptographically signed on the blockchain before being visible to others. This creates an immutable, verifiable record of your work that can be used to prove ownership in any dispute. The blockchain acts as a neutral, permanent ledger that neither Nexus nor any other party can alter.',
+    answer: 'Every contribution you make is timestamped and cryptographically signed on the blockchain before being visible to others. This creates an immutable, verifiable record of your work that can be used to prove ownership in any dispute. The blockchain acts as a neutral, permanent ledger that neither Talus nor any other party can alter.',
   },
   {
     question: 'Who owns the solutions submitted on the platform?',

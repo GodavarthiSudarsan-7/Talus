@@ -169,7 +169,7 @@ const ContactPage = () => {
           >
             <div className="flex items-center gap-3">
               <EnvelopeSimple size={20} weight="light" />
-              <span>hello@nexus.innovation</span>
+              <span>hello@Talus.innovation</span>
             </div>
             <div className="flex items-center gap-3">
               <MapPin size={20} weight="light" />

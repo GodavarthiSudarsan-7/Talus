@@ -2,7 +2,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const testimonials = [
   {
-    quote: "Nexus transformed how we approach R&D. We went from 18 months to 4 months on prototype development, with verified contributions from innovators worldwide.",
+    quote: "Talus transformed how we approach R&D. We went from 18 months to 4 months on prototype development, with verified contributions from innovators worldwide.",
     author: "Sarah Chen",
     role: "VP of Innovation, Fortune 500 Manufacturing",
   },

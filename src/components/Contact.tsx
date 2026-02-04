@@ -25,7 +25,7 @@ export const Contact = () => {
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <a 
-                href="mailto:hello@nexus.innovation"
+                href="mailto:hello@Talus.innovation"
                 className="btn-neumorphic flex items-center gap-2 text-foreground opacity-100"
               >
                 Contact Us

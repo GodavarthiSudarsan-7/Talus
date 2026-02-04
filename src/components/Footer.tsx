@@ -36,7 +36,7 @@ export const Footer = () => {
               <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-lg font-semibold text-primary-foreground">N</span>
               </div>
-              <span className="text-xl font-medium tracking-tight">Nexus</span>
+              <span className="text-xl font-medium tracking-tight">Talus</span>
             </a>
             <p className="text-sm text-foreground/50 leading-relaxed mb-6">
               Blockchain-verified innovation platform connecting enterprises with global innovators.
@@ -118,7 +118,7 @@ export const Footer = () => {
         <div className="pt-8 border-t border-border/20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-foreground/30">
-              © 2024 Nexus. All rights reserved.
+              © 2024 Talus. All rights reserved.
             </p>
             <p className="text-sm text-foreground/30">
               Built with transparency. Verified by blockchain.

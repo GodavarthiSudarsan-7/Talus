@@ -79,7 +79,7 @@ export const Hero = () => {
           <div className="rounded-lg border border-border/50 p-1 overflow-hidden">
             <img
               src={mockupImage}
-              alt="Nexus Platform Dashboard"
+              alt="Talus Platform Dashboard"
               className="w-full rounded-md"
             />
           </div>
