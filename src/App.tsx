@@ -17,6 +17,7 @@ import SignupContributor from "./pages/auth/SignupContributor";
 import SignupCorporate from "./pages/auth/SignupCorporate";
 import ContributorDashboard from "./pages/dashboard/ContributorDashboard";
 import CorporateDashboard from "./pages/dashboard/CorporateDashboard";
+import CreateChallenge from "./pages/challenges/CreateChallenge";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/signup/corporate" element={<SignupCorporate />} />
           <Route path="/dashboard/contributor" element={<ContributorDashboard />} />
           <Route path="/dashboard/corporate" element={<CorporateDashboard />} />
+          <Route path="/challenges/new" element={<CreateChallenge />} />
           <Route path="/about" element={<About />} />
           <Route path="/challenges" element={<Challenges />} />
           <Route path="/blog" element={<Blog />} />
