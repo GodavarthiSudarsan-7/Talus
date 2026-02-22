@@ -1,6 +1,6 @@
 #                Talus
 
-## Project info
+## Talus is a Supabase-powered innovation platform where Corporates post real-world challenges and Contributors submit solutions.
 
 **URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
